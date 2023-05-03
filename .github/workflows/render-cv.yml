@@ -1,5 +1,5 @@
 name: Render CV
-on: [push]
+on: [push, workflow_dispatch]
 jobs:
   render_cv:
     runs-on: ubuntu-latest
