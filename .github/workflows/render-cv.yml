@@ -1,0 +1,17 @@
+name: Render CV
+on: [push]
+jobs:
+  render_cv:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      - name: Render CV
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: cv.tex
+      - name: Upload CV
+        uses: actions/upload-artifact@v3
+        with:
+          name: CV
+          path: cv.pdf
