@@ -10,8 +10,18 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: cv.tex
-      - name: Upload CV
-        uses: actions/upload-artifact@v3
+      - name: Copy file
+          run: |
+            mkdir -p output
+            cp cv.pdf output/cv.pdf
+      - name: Push to Pages
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          name: CV
-          path: cv.pdf
+          source-directory: 'output'
+          destination-github-username: 'hleppine'
+          destination-repository-name: 'hleppine.github.io'
+          user-email: hannu.leppinen@gmail.com
+          target-branch: main
