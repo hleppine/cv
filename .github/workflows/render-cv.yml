@@ -1,4 +1,4 @@
-name: Render CV
+SWname: Render CV
 on: [push, workflow_dispatch]
 jobs:
   render_cv:
@@ -11,9 +11,9 @@ jobs:
         with:
           root_file: cv.tex
       - name: Copy file
-          run: |
-            mkdir -p output
-            cp cv.pdf output/cv.pdf
+        run: |
+          mkdir -p output
+          cp cv.pdf output/cv.pdf
       - name: Push to Pages
         uses: cpina/github-action-push-to-another-repository@main
         env:
