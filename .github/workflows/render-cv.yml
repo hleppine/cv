@@ -1,4 +1,4 @@
-SWname: Render CV
+name: Render CV
 on: [push, workflow_dispatch]
 jobs:
   render_cv:
