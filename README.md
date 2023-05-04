@@ -1,2 +1,4 @@
 # cv
-My CV in LaTeX, plus GitLab CI for rendering it into a PDF.
+My CV in LaTeX, plus GitLab CI for rendering and publishing it.
+
+The rendered PDF is available [here](https://hleppine.github.io/cv.pdf).
